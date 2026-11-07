@@ -462,7 +462,7 @@ main:focus { outline: none; }
 
 .plain-list li > .wip-title:last-child { margin-bottom: 0; }
 
-/* ---------- Dated lists (presentations, teaching) ---------- */
+/* ---------- Dated lists (teaching) ---------- */
 
 .dated-list {
   list-style: none;
