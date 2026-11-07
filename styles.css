@@ -216,7 +216,7 @@ main:focus { outline: none; }
 /* Transparent cutout, cropped to the subject. Its flat bottom edge
    sits on the divider line below the intro on wider screens. */
 .headshot {
-  width: 128px;
+  width: clamp(10rem, 40vw, 12rem);  /* 160px on small phones, 192px from ~480px wide */
   height: auto;
 }
 
@@ -235,20 +235,17 @@ main:focus { outline: none; }
   margin-bottom: var(--space-5);
 }
 
-@media (min-width: 640px) {
+/* Below 768px the photo sits above the name. From 768px it sits beside the
+   name, in the same columns as the sections below, with its flat bottom edge
+   on the divider line. */
+@media (min-width: 768px) {
   .intro {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 12rem 1fr;
     gap: var(--space-6);
     align-items: end;
     padding-bottom: 0;
   }
   .intro-text { padding-bottom: var(--space-6); }
-  .headshot { width: 148px; }
-}
-
-@media (min-width: 768px) {
-  /* Same columns as the sections below, so the name lines up with the text */
-  .intro { grid-template-columns: 12rem 1fr; }
   .headshot { width: 12rem; }
 }
 
