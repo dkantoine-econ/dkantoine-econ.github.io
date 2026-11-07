@@ -167,19 +167,21 @@ main:focus { outline: none; }
   padding-block: var(--space-3);
 }
 
-.wordmark {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.5rem;
-  color: var(--color-text);
-  text-decoration: none;
-  /* comfortable hit area */
+/* DKA monogram (same artwork as the favicon) instead of repeating the name */
+.monogram {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 44px;    /* comfortable hit area */
+  border-radius: 8px;  /* focus ring follows the tile's corners */
 }
 
-.wordmark:hover { color: var(--color-accent); text-decoration: none; }
+.monogram img {
+  width: 36px;
+  height: 36px;
+  transition: opacity var(--transition);
+}
+
+.monogram:hover img { opacity: 0.85; }
 
 .nav-list {
   display: flex;
